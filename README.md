@@ -1,6 +1,6 @@
 # Forecasting 43 State Sales Series: A Small Production System
 
-This project is an end-to-end forecasting service for the assignment in [assignment.md](assignment.md): predict the next **8 weeks of sales for every state**, compare several model families, automatically select the best model, and expose the resulting forecasts through a REST API.
+This project is an end-to-end forecasting service which is able to: predict the next **8 weeks of sales for every state**, compare several model families, automatically select the best model, and expose the resulting forecasts through a REST API.
 
 The implementation is intentionally not a notebook. It is a small backend system: a data loader, a feature pipeline, a model tournament, persisted artifacts, generated diagnostics, tests, and a FastAPI serving layer.
 
