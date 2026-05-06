@@ -1,0 +1,37 @@
+[project]
+name = "microgcc"
+version = "0.1.0"
+description = "End-to-end weekly state sales forecasting system with model selection and REST API."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "fastapi>=0.115.0",
+    "holidays>=0.60",
+    "joblib>=1.4.2",
+    "matplotlib>=3.9.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "pillow>=10.4.0",
+    "prophet>=1.1.6",
+    "pydantic>=2.8.0",
+    "scikit-learn>=1.5.0",
+    "statsmodels>=0.14.2",
+    "uvicorn>=0.30.0",
+    "xgboost>=2.1.0",
+]
+
+[project.optional-dependencies]
+deep-learning = ["tensorflow>=2.18.0"]
+dev = ["httpx>=0.27.0", "pytest>=8.3.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/microgcc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: runs full model training"]
+pythonpath = ["src"]

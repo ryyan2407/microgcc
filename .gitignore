@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+artifacts/*
+!artifacts/.gitkeep
+reports/figures/*
+!reports/figures/.gitkeep
+assignment.md
+data.csv
+.env.example
