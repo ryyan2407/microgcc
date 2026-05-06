@@ -279,15 +279,3 @@ metric rows: 473 = 43 states * 11 models
 forecast rows: 344 = 43 states * 8 weeks
 failures: {}
 ```
-
-## What I Would Do Next
-
-The next production step is not “add a bigger model.” It is to improve the evaluation loop:
-
-- Add rolling-origin backtests instead of one validation window.
-- Add prediction intervals, especially for API consumers.
-- Store model artifacts in a real registry such as MLflow.
-- Schedule retraining when new weekly data arrives.
-- Add monitoring for drift in sales level, seasonality, and forecast error.
-
-The main lesson from this dataset is simple: a good forecasting system is not a single clever model. It is a disciplined comparison harness. Once that harness exists, ETS, LSTM, Prophet, XGBoost, SARIMA, and even a Transformer can all compete under the same rules, and the API can serve the winner without caring how it was made.
